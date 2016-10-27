@@ -45,16 +45,16 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux common-aliases dircycle mvn dirhistory encode64 python sudo systemd web-search git)
+plugins=(dnf common-aliases dircycle mvn dirhistory encode64 python sudo systemd web-search git)
 
 # User configuration
 export EDITOR="vim"
 export PAGER="less"
-export BROWSER="chromium"
+export BROWSER="firefox"
 export MOVPLAY="vlc"
 export PICVIEW="feh"
 export TERMINAL="urxvt"
-export PATH=/opt/pt/bin:$HOME/.bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 
 for ext in html org php com net no de; do alias -s $ext=$BROWSER; done
@@ -73,13 +73,12 @@ alias VGA='setPanel.sh VGA'
 alias HDMI='setPanel.sh HDMI'
 
 #Studium
-alias nprog="ssh jadi0001@hal.ds.fh-kl.de -t tmux attach -t jadi"
-alias iprog="eclipse -data /home/kev/Dokumente/Studium/4_semester/inetprog/uebung"
-alias swtp="eclipse -data /home/kev/Dokumente/Studium/4_semester/swtp/prog"
-alias cdGatav='cd ~/Dokumente/Studium/5_semester/gatav'
-alias cdBetriebsssyteme='cd ~/Dokumente/Studium/5_semester/bs'
-alias nprog='cd ~/Dokumente/Studium/5_semester/nrog'
-hash -d stud="/home/kev/Dokumente/Studium/5_semester"
+hash -d stud="/home/raeste/Dokumente/Studium/"
+hash -d itm="/home/raeste/Dokumente/Studium/1_Semester/ITM"
+hash -d gui="/home/raeste/Dokumente/Studium/1_Semester/GUI"
+hash -d intpm="/home/raeste/Dokumente/Studium/1_Semester/INTPM"
+hash -d mat="/home/raeste/Dokumente/Studium/1_Semester/MAT"
+hash -d theinf="/home/raeste/Dokumente/Studium/1_Semester/THEINF"
 alias df="df -h"
 
 #Configs
@@ -100,9 +99,6 @@ alias gz='tar -xzvf'
 alias xz='tar -xJvf'
 alias bz='tar -xvjf'
 alias bz2='tar -jxvf'
-
-# Pacman
-alias Unlock='sudo rm /var/lib/pacman/db.lck'
 
 ## Directories
 alias C='clear'
