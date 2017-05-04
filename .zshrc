@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -45,7 +44,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(dnf common-aliases dircycle mvn dirhistory encode64 python sudo systemd web-search git)
+plugins=(dnf common-aliases dircycle docker mvn dirhistory encode64 python sudo systemd web-search git)
 
 # User configuration
 export EDITOR="vim"
@@ -75,10 +74,10 @@ alias HDMI='setPanel.sh HDMI'
 #Studium
 hash -d stud="/home/raeste/Dokumente/Studium/"
 hash -d itm="/home/raeste/Dokumente/Studium/1_Semester/ITM"
-hash -d gui="/home/raeste/Dokumente/Studium/1_Semester/GUI"
-hash -d intpm="/home/raeste/Dokumente/Studium/1_Semester/INTPM"
-hash -d mat="/home/raeste/Dokumente/Studium/1_Semester/MAT"
-hash -d theinf="/home/raeste/Dokumente/Studium/1_Semester/THEINF"
+hash -d dbm="/home/raeste/Dokumente/Studium/2_Semester/DBS"
+hash -d dtm="/home/raeste/Dokumente/Studium/2_Semester/DTM"
+hash -d vs="/home/raeste/Dokumente/Studium/2_Semester/VS"
+hash -d ais="/home/raeste/Dokumente/Studium/2_Semester/AIS"
 alias df="df -h"
 
 #Configs
@@ -92,6 +91,12 @@ alias font-check='echo "\ue0b0 \u00b1 \ue0a0 \u2718 \u26a1 \u2699"'
 alias mpdServ='ssh kevin@172.16.16.24 -p 20100'
 alias mountNFS='sudo mount 172.16.16.24:/srv/data /mnt'
 alias umountNFS='sudo umount /mnt'
+alias debian='ssh adm-dick@localhost -p 2222'
+alias debian2='ssh adm-dick@localhost -p 2223'
+alias debian3='ssh adm-dick@localhost -p 2224'
+alias dbm1='ssh jadi@10.0.107.102'
+alias dbm2='ssh jadi@10.0.3.43'
+alias dbm3='ssh jadi@10.0.107.164'
 
 ## Packages
 
