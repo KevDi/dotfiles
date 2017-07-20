@@ -127,6 +127,7 @@ alias eI='vim ~/.config/i3/config'
 
 ## Scripts
 alias activate='chmod 755'
+alias dc='docker-compose'
 
 ## Functions
 
