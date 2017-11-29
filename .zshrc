@@ -72,12 +72,10 @@ alias VGA='setPanel.sh VGA'
 alias HDMI='setPanel.sh HDMI'
 
 #Studium
-hash -d stud="/home/raeste/Dokumente/Studium/"
-hash -d itm="/home/raeste/Dokumente/Studium/1_Semester/ITM"
-hash -d dbm="/home/raeste/Dokumente/Studium/2_Semester/DBS"
-hash -d dtm="/home/raeste/Dokumente/Studium/2_Semester/DTM"
-hash -d vs="/home/raeste/Dokumente/Studium/2_Semester/VS"
-hash -d ais="/home/raeste/Dokumente/Studium/2_Semester/AIS"
+hash -d stud="/home/reaste/Dokumente/Studium"
+hash -d wkomm="/home/reaste/Dokumente/Studium/wkomm"
+hash -d stud="/home/reaste/Dokumente/Studium/betris"
+
 alias df="df -h"
 
 #Configs
@@ -94,9 +92,6 @@ alias umountNFS='sudo umount /mnt'
 alias debian='ssh adm-dick@localhost -p 2222'
 alias debian2='ssh adm-dick@localhost -p 2223'
 alias debian3='ssh adm-dick@localhost -p 2224'
-alias dbm1='ssh jadi@10.0.107.102'
-alias dbm2='ssh jadi@10.0.3.43'
-alias dbm3='ssh jadi@10.0.107.164'
 
 ## Packages
 
@@ -133,25 +128,3 @@ alias dc='docker-compose'
 
 hacker-top() { python ~/Scripts/hacker-top/hacker_top.py ;}
 reddit-top() { python ~/Scripts/reddit-top/reddit_top ;}
-Tran() { ~/Scripts/blocklist.sh && transmission-daemon && transmission-remote-cli ;}
-tpb() { clear && figlet -c Pirate Bay && ~/Scripts/tbp.sh ;}
-
-## Transmission
-
-tsm-clearcompleted() {
-        transmission-remote -l | grep 100% | grep Done | \
-        awk '{print $1}' | xargs -n 1 -I % transmission-remote -t % -r ;}
-tsm() { transmission-remote --list ;}
-tsm-start() { transmission-daemon ;}
-tsm-stop() { pkill tramsmission-daemon ;}
-tsm-altspeedenable() { transmission-remote --alt-speed ;}
-tsm-altspeeddisable() {	transmission-remote --no-alt-speed ;}
-tsm-add() { transmission-remote --add "$1" ;}
-tsm-askmorepeers() { transmission-remote -t"$1" --reannounce ;}
-tsm-pause() { transmission-remote -t"$1" --stop ;}
-tsm-start-torrent() { transmission-remote -t"$1" --start ;}
-tsm-purge() { transmission-remote -t"$1" --remove-and-delete ;} # will delete data also
-tsm-remove() { transmission-remote -t"$1" --remove ;} # does not delete data
-tsm-info() { transmission-remote -t"$1" --info ;}
-tsm-speed() { while true;do clear; transmission-remote -t"$1" -i | grep Speed;sleep 1;done ;}
-
