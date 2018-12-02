@@ -75,6 +75,7 @@ alias HDMI='setPanel.sh HDMI'
 hash -d stud="/home/reaste/Dokumente/Studium"
 hash -d wkomm="/home/reaste/Dokumente/Studium/wkomm"
 hash -d stud="/home/reaste/Dokumente/Studium/betris"
+hash -d mt="/home/raeste/Dropbox/Studium/Master/4_Semester/Masterarbeit/Bericht"
 
 alias df="df -h"
 
