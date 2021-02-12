@@ -53,7 +53,7 @@ export BROWSER="firefox"
 export MOVPLAY="vlc"
 export PICVIEW="feh"
 export TERMINAL="urxvt"
-export PATH=$HOME/.bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:$HOME/.local/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 
 for ext in html org php com net no de; do alias -s $ext=$BROWSER; done
@@ -63,19 +63,9 @@ for ext in mpg wmv avi mkv; do alias -s $ext=$MOVPLAY; done
 
 ## System
 
-alias Shutdown='sudo shutdown -P now'
 alias keys='xev'
 alias unblock-wireless='rfkill unblock all && ifconfig set wlp9s0 up'
 alias toggle-wifi='sudo ifconfig wlp9s0 down && sudo ifconfig wlp9s0 up'
-alias LVDS='setPanel.sh LVDS'
-alias VGA='setPanel.sh VGA'
-alias HDMI='setPanel.sh HDMI'
-
-#Studium
-hash -d stud="/home/reaste/Dokumente/Studium"
-hash -d wkomm="/home/reaste/Dokumente/Studium/wkomm"
-hash -d stud="/home/reaste/Dokumente/Studium/betris"
-hash -d mt="/home/raeste/Dropbox/Studium/Master/4_Semester/Masterarbeit/Bericht"
 
 alias df="df -h"
 
@@ -87,12 +77,8 @@ alias Fonts='fc-cache -vf ~/.fonts'
 alias font-check='echo "\ue0b0 \u00b1 \ue0a0 \u2718 \u26a1 \u2699"'
 
 #ssh
-alias mpdServ='ssh kevin@172.16.16.24 -p 20100'
 alias mountNFS='sudo mount 172.16.16.24:/srv/data /mnt'
 alias umountNFS='sudo umount /mnt'
-alias debian='ssh adm-dick@localhost -p 2222'
-alias debian2='ssh adm-dick@localhost -p 2223'
-alias debian3='ssh adm-dick@localhost -p 2224'
 
 ## Packages
 
@@ -127,5 +113,3 @@ alias dc='docker-compose'
 
 ## Functions
 
-hacker-top() { python ~/Scripts/hacker-top/hacker_top.py ;}
-reddit-top() { python ~/Scripts/reddit-top/reddit_top ;}
