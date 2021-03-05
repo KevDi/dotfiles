@@ -1,0 +1,228 @@
+[colors]
+;background = ${xrdb:color0:#222}
+background = #222
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+
+[bar/mybar]
+
+font-0 = hack:pixelsize=10;1
+#font-1 = "Font Awesome 5 Brands,Font Awesome 5 Brands Regular:style=Regular:pixelsize=10;1"
+#font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
+#font-3 = "Font Awesome 5 Free,Font Awesome 5 Free Solid:style=Solid:pixelsize=10;1"
+font-1 = "DejaVuSansMono Nerd Font Mono:style=Bold:pixelsize=20;3"
+
+width = 100%
+height = 27
+radius = 6.0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+modules-right = wlan vpn filesystem battery battery1 temperature xbacklight pulseaudio date
+modules-left = i3
+
+tray-position = right
+tray-padding = 2
+
+[module/date]
+type = internal/date
+date = %d.%m.%Y%
+time = %H:%M
+
+format = <label>
+
+label = %date%  %time%
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+strip-wsnumbers = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-focused = %icon%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 2
+
+label-unfocused = %icon%
+label-unfocused-padding = 2
+
+label-visible = %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+ws-icon-0 = "1;"
+ws-icon-1 = "2;"
+ws-icon-2 = "3;"
+ws-icon-3 = "4;"
+ws-icon-4 = "5;"
+ws-icon-5 = "6;"
+
+[module/filesystem]
+type = internal/fs
+
+mount-0 = /
+mount-1 = /home
+
+interval = 10
+
+fixed-values = true
+
+spacing = 4
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/vpn]
+type = custom/script
+exec = ~/.config/polybar/scripts/vpn-networkmanager-status.sh
+interval = 10
+format-prefix="嬨 "
+click-left = ~/.config/polybar/scripts/vpn-connect.sh
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+time-format = %H:%M
+
+format-charging-prefix = "BAT0: "
+format-charging = <ramp-capacity> <label-charging>
+format-charging-underline = #ffb52a
+label-charging = %percentage%% %time%
+
+format-discharging-prefix = "BAT0: "
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+label-discharging = %percentage%% %time%
+
+format-full-prefix = "BAT0:  "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/battery1]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 98
+
+time-format = %H:%M
+
+format-charging-prefix = "BAT1: "
+format-charging = <ramp-capacity> <label-charging>
+format-charging-underline = #ffb52a
+label-charging = %percentage%% %time%
+
+format-discharging-prefix = "BAT1: "
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+label-discharging = %percentage%% %time%
+
+format-full-prefix = "BAT1:  "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <ramp-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+label-muted = ﱝ
+label-muted-foreground = #666
+
+click-right = pavucontrol
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <ramp> <label>
+
+label = %percentage%%
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <label-connected>
+format-connected-underline = #9f78e1
+label-connected = "%{A1:~/.config/polybar/scripts/wlan_connect.sh:} %essid% %{A}"
+
+format-disconnected = <label-disconnected>
+label-disconnected = "%{A1:~/.config/polybar/scripts/wlan_connect.sh:}睊%{A}"
+label-disconnected-foreground = ${colors.foreground-alt}
+#click-left = ~/.config/polybar/scripts/wlan_connect.sh 
+#click-left = pavucontrol
+
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
+

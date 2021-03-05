@@ -3,7 +3,7 @@
 !-------------------------------------------------------------------------------
 
 Xft.dpi:                    96
-Xft.antialias:              false
+Xft.antialias:              true
 Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
@@ -95,7 +95,7 @@ URxvt.pointerBlank:         true
 *color15: #fdf6e3
 
 URxvt*termName: rxvt
-URxvt.font:         xft:Hack:size=10
+URxvt.font:         xft:Hack:size=10,xft:Inconsolata Nerd Font Mono:size=10
 URxvt.perl-ext:         default,url-select
 URxvt.keysym.M-u:       perl:url-select:select_next
 URxvt.underlineURLS:    true

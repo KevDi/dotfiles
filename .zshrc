@@ -44,12 +44,11 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(dnf common-aliases dircycle docker mvn dirhistory encode64 python sudo systemd web-search git)
+plugins=(archlinux common-aliases dircycle docker mvn dirhistory encode64 python sudo systemd web-search git)
 
 # User configuration
 export EDITOR="vim"
 export PAGER="less"
-export BROWSER="firefox"
 export MOVPLAY="vlc"
 export PICVIEW="feh"
 export TERMINAL="urxvt"
@@ -106,6 +105,9 @@ alias eV='vim ~/.vimrc'
 
 ##i3
 alias eI='vim ~/.config/i3/config'
+
+## polybar
+alias eP='vim ~/.config/polybar/config'
 
 ## Scripts
 alias activate='chmod 755'
