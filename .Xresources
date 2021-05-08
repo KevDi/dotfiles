@@ -28,12 +28,6 @@ URxvt.saveLines:            50
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
-! Fonts
-URxvt.allow_bold:           false
-/* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
-!URxvt*font: xft:Monospace:pixelsize=14
-!URxvt*boldFont: xft:Monospace:pixelsize=14
-
 ! Fix font space
 URxvt*letterSpace: -1
 
@@ -48,7 +42,7 @@ URxvt.urlLauncher:          firefox
 
 ! Cursor
 URxvt.cursorBlink:          true
-URxvt.cursorColor:          #657b83
+!URxvt.cursorColor:          #657b83
 URxvt.cursorUnderline:      false
 
 ! Pointer
@@ -97,7 +91,7 @@ URxvt.pointerBlank:         true
 *color15: #fdf6e3
 
 URxvt*termName: rxvt
-URxvt.font:         xft:Hack:size=10,xft:Inconsolata Nerd Font Mono:size=10
+URxvt.font:         xft:Hack:size=10,xft:Hack Nerd Font Mono:size=10
 URxvt.perl-ext:         default,url-select
 URxvt.keysym.M-u:       perl:url-select:select_next
 URxvt.underlineURLS:    true
