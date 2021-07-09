@@ -238,10 +238,13 @@ bindsym XF86Display exec --no-startup-id arandr
 bindsym $mod+d exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Hack 10'
 bindsym mod1+Shift+f exec --no-startup-id firefox --private-window
 bindsym mod1+Shift+c exec --no-startup-id chromium --incognito
+bindsym $mod+m exec --no-startup-id /home/kev/.screenlayout/hdmi.sh
+bindsym $mod+Shift+m exec --no-startup-id /home/kev/.screenlayout/laptop.sh
+
 exec_always --no-startup-id feh --bg-scale /usr/share/pixmaps/background.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id nm-applet
-exec --no-startup-id xautolock -time 5 -locker "$locker"
+exec --no-startup-id xautolock -time 15 -locker "$locker"
 exec --no-startup-id udiskie -ANt
 exec --no-startup-id i3-msg 'exec firefox; exec urxvt; exec code; exec keepassxc; exec thunderbird'
 exec --no-startup-id synology-drive
