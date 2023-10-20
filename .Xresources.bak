@@ -1,23 +1,23 @@
-*background:                      #272827
-*foreground:                      #657b83
-*cursorColor:                     #16A085
+*background: #162025
+*foreground: #bfbfbf
+*cursorColor: #bfbfbf
 
-*color0:                          #232423
-*color8:                          #282928
-*color1:                          #BA2922
-*color9:                          #CC372C
-*color2:                          #7E807E
-*color10:                         #8D8F8D
-*color3:                          #4C4F4D
-*color11:                         #4E524F
-*color4:                          #16A085
-*color12:                         #13BF9D
-*color5:                          #43746A
-*color13:                         #487D72
-*color6:                          #00CCCC
-*color14:                         #00D1D1
-*color7:                          #E0E0E0
-*color15:                         #E8E8E8
+*color0: #162025
+*color8: #5d6160
+*color1: #393843
+*color9: #662b37
+*color2: #39402e
+*color10: #39402e
+*color3: #39402e
+*color11: #39402e
+*color4: #75404b
+*color12: #75404b
+*color5: #4c584a
+*color13: #4c584a
+*color6: #662b37
+*color14: #4c584a
+*color7: #bfbfbf
+*color15: #bfbfbf
 
 URxvt.font: xft:Source Code Pro:size=10.5
 URxvt.depth:                      32
@@ -29,10 +29,10 @@ URxvt*internalBorder: 5
 URxvt*geometry: 70x19
 
 rofi.color-enabled: true
-rofi.color-window: #272827, #13bf9d, #13bf9d
-rofi.color-normal: #272827, #657b83, #272827, #272827, #13bf9d
-rofi.color-active: #272827, #657b83, #272827, #272827, #13bf9d
-rofi.color-urgent: #272827, #657b83, #272827, #272827, #13bf9d
+rofi.color-window: #162025, #39402e, #39402e
+rofi.color-normal: #162025, #bfbfbf, #162025, #162025, #75404b
+rofi.color-active: #162025, #bfbfbf, #162025, #162025, #75404b
+rofi.color-urgent: #162025, #bfbfbf, #162025, #162025, #75404b
 
 rofi.separator-style: solid
 rofi.sidebar-mode: false

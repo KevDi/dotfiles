@@ -5,5 +5,5 @@ vpn="$(nmcli -t -f name,type connection show --order name --active 2>/dev/null |
 if [ -n "$vpn" ]; then
 	nmcli con down id $vpn
 else
-	nmcli con up id roosendaal
+	nmcli con up id ca.hideservers.net
 fi
