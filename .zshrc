@@ -44,9 +44,11 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux vscode common-aliases dircycle docker mvn dirhistory encode64 python sudo systemd web-search git zsh-autosuggestions ssh-agent)
+plugins=(vscode common-aliases debian dircycle docker mvn dirhistory encode64 python sudo systemd web-search git zsh-autosuggestions ssh-agent)
 
 # User configuration
+apt_pref='apt'
+apt_upgr='full-upgrade'
 export EDITOR="vim"
 export PAGER="less"
 export MOVPLAY="vlc"
@@ -112,6 +114,6 @@ alias eP='vim ~/.config/polybar/config'
 ## Scripts
 alias activate='chmod 755'
 alias dc='docker-compose'
-
+alias python='python3'
 ## Functions
 eval $(dircolors ~/.dircolors)
