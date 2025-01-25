@@ -44,7 +44,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vscode common-aliases debian dircycle docker mvn dirhistory encode64 python sudo systemd web-search git zsh-autosuggestions ssh-agent)
+plugins=(vscode common-aliases dnf dircycle docker mvn dirhistory encode64 python sudo systemd web-search git zsh-autosuggestions ssh-agent)
 
 # User configuration
 apt_pref='apt'
@@ -54,7 +54,7 @@ export PAGER="less"
 export MOVPLAY="vlc"
 export PICVIEW="feh"
 export TERMINAL="urxvt"
-export PATH=$HOME/.bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:$HOME/.local/bin:/usr/local/bin:/usr/local/go/bin:$HOME/go/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 
 for ext in html org php com net no de; do alias -s $ext=$BROWSER; done

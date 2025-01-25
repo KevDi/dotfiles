@@ -13,13 +13,13 @@ font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
 # Window kill command
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show combi
+bindsym $mod+d exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Hack 10' -show-icons
 
 # change focus
 bindsym $mod+j focus left
@@ -161,6 +161,7 @@ for_window [class="firefox" title=".*(Privater*)"] floating enable, resize set 1
 for_window [class="Chromium"] floating enable, resize set 1500 1000, move scratchpad
 for_window [class="Opera" title=".*Privat*"] floating enable, resize set 1500 1000, move scratchpad
 for_window [class="explorer.exe"] floating enable border normal
+for_window [class="Stardew Valley"] floating enable
 
 assign [class="firefox"] $ws1
 assign [class="chromium"] $ws1
@@ -170,6 +171,7 @@ assign [class="Darktable"] $ws4
 assign [class=Hexchat|Slack] $ws5
 assign [class="Thunderbird"] $ws6
 assign [class="VirtualBox"] $ws7
+assign [class="Stardew Valley"] $ws8
 for_window [class="Spotify"] move to workspace $ws9
 for_window [class="Pragha"] move to workspace $ws9
 for_window [class="Geeqie"] move to workspace $ws4
@@ -301,21 +303,22 @@ mode "$mode_gaps_outer" {
 
 # set power-manager and volume control
 exec --no-startup-id mate-power-manager
+exec --no-startup-id brightnessctl s 50
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@  +5% && pactl set-sink-mute @DEFAULT_SINK@ 0 && killall -SIGUSR1 i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@  -5% && pactl set-sink-mute @DEFAULT_SINK@ 0 && killall -SIGUSR1 i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 
 # touchpad on and off controller on laptop with Fn+<touchpad control functional key>
 bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
 bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
-bindsym $mod+m exec --no-startup-id /home/kev/.screenlayout/hdmi.sh
+bindsym $mod+m exec --no-startup-id /home/kev/.screenlayout/extmon.sh
 bindsym $mod+Shift+m exec --no-startup-id /home/kev/.screenlayout/laptop.sh
 bindsym $mod+p exec --no-startup-id /home/kev/.config/polybar/i3wmthemer_bar_launch.sh
 bindsym mod1+Shift+f exec --no-startup-id firefox --private-window
-bindsym mod1+Shift+c exec --no-startup-id chromium --incognito
+bindsym mod1+Shift+c exec --no-startup-id chromium-browser --incognito
 bindsym mod1+Shift+o exec --no-startup-id opera --private
 bindsym mod1+k [instance="keepassxc"] scratchpad show
 bindsym mod1+f [class="firefox" title=".*(Privat *)"] scratchpad show, move position center
