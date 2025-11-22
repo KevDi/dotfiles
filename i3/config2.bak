@@ -247,7 +247,7 @@ exec --no-startup-id keepassxc
 exec --no-startup-id thunderbird
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --hack
 
 # Theme colors
 client.focused #bfbfbf #162025 #bfbfbf #39402e #39402e
